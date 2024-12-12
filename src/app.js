@@ -15,10 +15,18 @@ app.use(express.static("public")) // this is static to work to now this data is 
 // app.use(cookieParser())
 
 //routes import
+import hospitalRoutes from "./routes/hospital.routes.js";
+import  PatientRoutes  from "./routes/patient.routes.js";
+import  MedicalRecord  from "./routes/medical.routes.js";
+import  DoctorRecord  from "./routes/doctor.routes.js";
 
 
 
 //routes declaration
+app.use("/api/v1/hospitals", hospitalRoutes);
+app.use("/api/v1/patients", PatientRoutes);
+app.use("/api/v1/MedicalRecord", MedicalRecord);
+app.use("/api/v1/DoctorRecord", DoctorRecord);
 
 
 // http://localhost:8000/api/v1/users/register
